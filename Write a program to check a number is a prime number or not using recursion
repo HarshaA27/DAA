@@ -1,0 +1,15 @@
+def is_prime_recursive(n, divisor=None):
+    if n < 2:
+        return False
+    if divisor is None:
+        divisor = n - 1
+    if divisor == 1:
+        return True
+    if n % divisor == 0:
+        return False
+    return is_prime_recursive(n, divisor - 1)
+test_number = 29
+if is_prime_recursive(test_number):
+    print(f"{test_number} is a prime number.")
+else:
+    print(f"{test_number} is not a prime number.")
